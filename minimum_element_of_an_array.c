@@ -7,13 +7,13 @@ int main()
     for (i = 0; i<size; i++)
         scanf("%d", &array[i]);
     
-    min = array[0];
+    min= array[0];
     
     for (i = 1; i < size; i++)
     {
-        if (array[i] <min)
+        if (array[i] < min)
         {
-                min  = array[i];
+                min = array[i];
         }
     }
     printf("%d",min);
