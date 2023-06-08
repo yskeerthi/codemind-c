@@ -1,22 +1,14 @@
 #include<stdio.h>
 int main()
 {
-    int n,r,c,s=0;
+    int n,r,rev=0;
     scanf("%d",&n);
-    c=n;
-    while(n!=0)
+    int temp=n;
+    while(temp)
     {
-        r=n%10;
-        s=r+(s*10);
-        n=n/10;
+       r=temp%10;
+       rev=(rev*10)+r;
+       temp=temp/10;
     }
-    if(c==s)
-    {
-        printf("%d",c);
-    }
-    else
-    {
-    printf("%d",s);
-    }
+    printf("%d",rev);
 }
-    
