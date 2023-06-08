@@ -1,28 +1,38 @@
-#include<stdio.h> 
-#include<math.h> 
-main() 
-{ 
- int i,j,num,temp,sum=0; 
- scanf("%d",&num); 
-  while(sum!=1 && sum!=4) 
-  { 
-   sum=0; 
-   while(num>0) 
-  { 
-    j=num%10; 
-    sum+=(j*j); 
-    num=num/10;  
-  } 
-  num=sum; 
-  } 
-   
-  if(sum==1) 
-  {
- printf("True");
-  }
- else 
- {
- printf("False"); 
- }
- return 0;
-} 
+#include<stdio.h>
+int happy(int n)
+{
+    int temp,r,sum=0;
+    temp=n;
+    while(temp)
+    {
+        r=temp%10;
+        sum=sum+(r*r);
+        temp=temp/10;
+    }
+    if(sum>=10)
+    {
+        happy(sum);
+    }
+    else
+    {
+        if(sum==1 || sum==7)
+        {
+            return 1;
+        }
+        return 0;
+    }
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);
+   if( happy(n))
+   {
+       printf("True");
+   }
+   else
+   {
+       printf("False");
+   }
+    
+}
